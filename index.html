@@ -411,7 +411,6 @@
                     </div>
 
                     <div id="guestListContainer"></div>
-                    <div class="guest-count" id="guestCount"></div>
                 </div>
             </div>
 
@@ -505,10 +504,6 @@
                         ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
                         : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
 
-                    const total = data.guests1030.length + data.guests21.length;
-                    document.getElementById('guestCount').textContent = total > 0 
-                        ? `✨ ${total} persone confermano la loro presenza`
-                        : 'Sii il primo a confermare!';
                 }
             } catch (error) {
                 console.error('Errore nel caricamento ospiti:', error);
