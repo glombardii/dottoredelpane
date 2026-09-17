@@ -414,6 +414,496 @@
                 </div>
 
                 <div class="important-note" style="text-align: center; margin-top: 20px;">
+                    Siccome per il mio compleanno ho fatto dei casini rendendo sostanzialmente impossibile la vita a Monica, a sto giro mi è stato chiesto di facilitare il tutto. Quindi se vuoi partecipare a un gruppo al quale io non posso accedere e nel quale non ho idea di cosa possa succedere <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">qua c'è il link</a> 😂
+                </div>
+            </div>
+
+            <!-- Liste separate -->
+            <div class="lists-container">
+                <div class="guest-list">
+                    <h3>🥂 Brindo alle 10:30</h3>
+                    <div class="guest-items" id="list1030"></div>
+                </div>
+
+                <div class="guest-list">
+                    <h3>🍺 Bevo alle 21</h3>
+                    <div class="guest-items" id="list21"></div>
+                </div>
+            </div>
+
+            <div class="important-note" style="text-align: center; margin-top: 30px;">
+                Se si aggiungi il tuo nome alla lista, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span>
+            </div>
+    </div>
+
+    <script>
+        // CONFIGURATION - Sostituisci con il tuo script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3YGflnwL8RdjdBlo_2XIvCeStdRMC0rxIN2XmcSsAe9heZNKvZPWF2poxjPdBEkz64g/exec';
+
+        // Carica i dati all'apertura della pagina
+        window.addEventListener('DOMContentLoaded', () => {
+            loadGuests();
+        });
+
+        async function addGuest() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+            
+            // Leggi i checkbox selezionati
+            const orari = [];
+            if (document.getElementById('orario1').checked) orari.push('brindo_1030');
+            if (document.getElementById('orario2').checked) orari.push('bevo_21');
+
+            if (!name) {
+                alert('Scrivi il tuo nome!');
+                return;
+            }
+
+            if (orari.length === 0) {
+                alert('Seleziona almeno un orario!');
+                return;
+            }
+
+            const addBtn = document.getElementById('addBtn');
+            addBtn.textContent = '...';
+            addBtn.disabled = true;
+
+            try {
+                for (let orario of orari) {
+                    const response = await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        body: JSON.stringify({ name: name, orario: orario })
+                    });
+
+                    if (!response.ok) {
+                        alert('Errore nel salvataggio. Riprova.');
+                        throw new Error('Errore salvataggio');
+                    }
+                }
+                
+                nameInput.value = '';
+                loadGuests();
+            } catch (error) {
+                console.error('Errore:', error);
+            } finally {
+                addBtn.textContent = 'Aggiungi';
+                addBtn.disabled = false;
+            }
+        }
+
+        async function loadGuests() {
+            try {
+                const response = await fetch(SCRIPT_URL + '?action=getGuests');
+                const data = await response.json();
+                
+                if (data.guests1030 && data.guests21) {
+                    const list1030 = document.getElementById('list1030');
+                    const list21 = document.getElementById('list21');
+
+                    list1030.innerHTML = data.guests1030.length > 0 
+                        ? data.guests1030.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
+                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
+
+                    list21.innerHTML = data.guests21.length > 0
+                        ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
+                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
+
+                    const total = data.guests1030.length + data.guests21.length;
+                    document.getElementById('guestCount').textContent = total > 0 
+                        ? `✨ ${total} persone confermano la loro presenza`
+                        : 'Sii il primo a confermare!';
+                }
+            } catch (error) {
+                console.error('Errore nel caricamento ospiti:', error);
+            }
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+    </script>
+</body>
+</html>        }
+
+        .header::before {
+            content: '🎓';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #d946ef;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .section-text {
+            line-height: 1.8;
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            background: linear-gradient(to right, #eff6ff, #fef3c7);
+            border-left: 4px solid #f97316;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .time {
+            font-weight: 700;
+            color: #d946ef;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 15px;
+            margin-top: 8px;
+            line-height: 1.7;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background: #d946ef;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .map-link:hover {
+            background: #c026d3;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border-left: 4px solid #d946ef;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #6b21a8;
+            margin: 25px 0;
+            line-height: 1.7;
+        }
+
+        .lists-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .guest-list {
+            background: #f3e8ff;
+            border: 2px solid #d946ef;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .guest-list h3 {
+            color: #d946ef;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .guest-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .guest-item {
+            background: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #d946ef;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-section {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            padding: 28px;
+            border-radius: 14px;
+            border: 2px solid #d946ef;
+            margin: 30px 0;
+        }
+
+        .form-section h3 {
+            color: #d946ef;
+            margin-bottom: 18px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .form-section input {
+            flex: 1;
+            padding: 13px 15px;
+            border: 2px solid #d946ef;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-section input:focus {
+            outline: none;
+            border-color: #d946ef;
+            box-shadow: 0 0 0 3px rgba(217, 70, 239, 0.1);
+        }
+
+        #addBtn {
+            padding: 13px 28px;
+            background: linear-gradient(135deg, #d946ef 0%, #c026d3 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        #addBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 70, 239, 0.3);
+        }
+
+        #addBtn:active {
+            transform: translateY(0);
+        }
+
+        .radio-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #1e40af;
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        #guestListContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .guest-badge {
+            background: white;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 2px solid #1e40af;
+            font-size: 14px;
+            font-weight: 500;
+            word-break: break-word;
+            box-shadow: 0 2px 6px rgba(30, 64, 175, 0.1);
+            text-align: center;
+        }
+
+        .guest-count {
+            color: #1e40af;
+            font-weight: 700;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
+            padding: 25px 30px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            border-top: 2px solid #1e40af;
+        }
+
+        @media (max-width: 650px) {
+            .header {
+                padding: 35px 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .lists-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            #addBtn {
+                width: 100%;
+            }
+
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            #guestListContainer {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+
+        .heart {
+            color: #f97316;
+        }
+
+        .emoji {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Festeggiamo un dottore buono come il pane (a lievitazione naturale) 🎉</h1>
+            <p>Se leggi questo messaggio è perché sei una persona a cui voglio bene e quindi mi farebbe super piacere vederti per festeggiare la fine del dottorato e l'inizio di qualcos'altro (non poniamo limiti alla fantasia definendo cosa sia questo qualcos'altro)</p>
+        </div>
+
+        <div class="content">
+            <!-- Intro -->
+            <div class="section">
+                <p class="section-text">Lunedì <strong>28 settembre</strong> cercherò di portare a casa questo tanto agognato titolo. Il programma della giornata sarà il seguente:</p>
+            </div>
+
+            <!-- Programma -->
+            <div class="section">
+                <h2>📅 Il programma</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time"><span class="emoji">🎓</span> Alle 10:30</div>
+                        <div class="description">Presso il dipartimento di biologia ambientale avrete l'occasione unica di capire di cosa mi occupo assistendo alla final dissertationss. A seguire rapido brindisi in città universitaria.</div>
+                        <a href="https://maps.app.goo.gl/BRwn8YB8ruNxmNku9?g_st=ic" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time"><span class="emoji">🍺</span> Alle ore 21 (forse)</div>
+                        <div class="description">In luogo da confermare (indicativamente Roma Est) avrete l'occasione, meno unica della prima, di vedermi bere. Contestualmente offrirò da bere perché farlo insieme è meglio che farlo per conto proprio. Insomma è una bella occasione comunque ;)</div>
+                    </div>
+                </div>
+
+                <div class="important-note">
+                    <strong>⚠️ Info importante:</strong> Il luogo per lunedì sera cercherò di dirvelo in privato ma coooomunque sarà aggiornato qua! Quindi se lunedì sera ti svegli e non sai dove andare butta un'occhio qui!!
+                </div>
+            </div>
+
+            <!-- Form ospiti -->
+            <div class="section">
+                <h2>✨ Fammi sapere se ci sei!</h2>
+                <p class="section-text">Per aiutarmi nel definire e organizzare mi servirebbe in linea di massima sapere se ci sarai! Se si aggiungi gentilmente il tuo nome alla lista qua sotto, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span></p>
+
+                <div class="form-section">
+                    
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="orario1" value="brindo_1030" checked>
+                            <label for="orario1">Brindo alle 10:30</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="checkbox" id="orario2" value="bevo_21">
+                            <label for="orario2">Bevo alle 21</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            placeholder="Scrivi il tuo nome..."
+                            onkeypress="if(event.key==='Enter') addGuest()"
+                        >
+                        <button id="addBtn" onclick="addGuest()">Aggiungi</button>
+                    </div>
+
+                    <div id="guestListContainer"></div>
+                </div>
+
+                <div class="important-note" style="text-align: center; margin-top: 20px;">
                     <strong>📱 Unisciti al gruppo:</strong><br>
                     Vuoi rimanere aggiornato su orari e dettagli? <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">Entra nel gruppo WhatsApp</a>
                 </div>
