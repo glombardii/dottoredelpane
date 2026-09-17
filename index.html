@@ -490,7 +490,7 @@
 
         async function loadGuests() {
             try {
-                const response = await fetch(SCRIPT_URL.replace('addGuest', 'getGuests'));
+                const response = await fetch(SCRIPT_URL + '?action=getGuests');
                 const data = await response.json();
                 
                 if (data.guests1030 && data.guests21) {
