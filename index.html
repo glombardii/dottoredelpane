@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>28 Settembre • Dottore di sto pane</title>
+    <title>28 Settembre • Celebrissima</title>
     <style>
         * {
             margin: 0;
@@ -412,6 +412,11 @@
 
                     <div id="guestListContainer"></div>
                 </div>
+
+                <div class="important-note" style="text-align: center; margin-top: 20px;">
+                    <strong>📱 Unisciti al gruppo:</strong><br>
+                    Vuoi rimanere aggiornato su orari e dettagli? <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">Entra nel gruppo WhatsApp</a>
+                </div>
             </div>
 
             <!-- Liste separate -->
@@ -504,6 +509,10 @@
                         ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
                         : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
 
+                    const total = data.guests1030.length + data.guests21.length;
+                    document.getElementById('guestCount').textContent = total > 0 
+                        ? `✨ ${total} persone confermano la loro presenza`
+                        : 'Sii il primo a confermare!';
                 }
             } catch (error) {
                 console.error('Errore nel caricamento ospiti:', error);
