@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>28 Settembre • Celebrissima</title>
+    <title>Celebrazione Dottorato • Gabriele</title>
     <style>
         * {
             margin: 0;
@@ -13,49 +13,38 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #f97316 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
             color: #333;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #f97316 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 50px 30px;
+            padding: 40px 30px;
             text-align: center;
-            position: relative;
-        }
-
-        .header::before {
-            content: '🎓';
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 40px;
-            opacity: 0.3;
         }
 
         .header h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
+            font-size: 28px;
+            margin-bottom: 10px;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .header p {
             font-size: 16px;
             opacity: 0.95;
-            line-height: 1.7;
+            line-height: 1.6;
             font-weight: 300;
         }
 
@@ -64,33 +53,35 @@
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .section h2 {
-            font-size: 20px;
-            color: #1e40af;
-            margin-bottom: 18px;
-            font-weight: 700;
+            font-size: 18px;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .section-text {
             line-height: 1.8;
             color: #555;
             font-size: 15px;
-            margin-bottom: 15px;
         }
 
         .timeline {
-            background: linear-gradient(to right, #eff6ff, #fef3c7);
-            border-left: 4px solid #f97316;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
         }
 
         .timeline-item {
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
 
         .timeline-item:last-child {
@@ -98,309 +89,248 @@
         }
 
         .time {
-            font-weight: 700;
-            color: #f97316;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 600;
+            color: #667eea;
+            font-size: 14px;
         }
 
         .description {
             color: #666;
-            font-size: 15px;
-            margin-top: 8px;
-            line-height: 1.7;
-        }
-
-        .map-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 14px;
-            background: #1e40af;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .map-link:hover {
-            background: #1e3a8a;
-        }
-
-        .important-note {
-            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
-            border-left: 4px solid #f97316;
-            padding: 18px;
-            border-radius: 10px;
             font-size: 14px;
-            color: #92400e;
-            margin: 25px 0;
-            line-height: 1.7;
-        }
-
-        .lists-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .guest-list {
-            background: #f0f9ff;
-            border: 2px solid #1e40af;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .guest-list h3 {
-            color: #1e40af;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .guest-items {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .guest-item {
-            background: white;
-            padding: 10px 12px;
-            border-radius: 6px;
-            border-left: 3px solid #1e40af;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
+            margin-top: 4px;
+            line-height: 1.6;
         }
 
         .form-section {
-            background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
-            padding: 28px;
-            border-radius: 14px;
-            border: 2px solid #1e40af;
-            margin: 30px 0;
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e0e7ff;
         }
 
         .form-section h3 {
-            color: #1e40af;
-            margin-bottom: 18px;
-            font-size: 17px;
-            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
         }
 
         .form-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
-        .form-section input {
+        #nameInput {
             flex: 1;
-            padding: 13px 15px;
-            border: 2px solid #1e40af;
+            padding: 12px 14px;
+            border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 15px;
             font-family: inherit;
-            transition: all 0.3s;
+            transition: border-color 0.3s;
         }
 
-        .form-section input:focus {
+        #nameInput:focus {
             outline: none;
-            border-color: #f97316;
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            border-color: #667eea;
         }
 
         #addBtn {
-            padding: 13px 28px;
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 8px;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             font-size: 15px;
-            transition: all 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         #addBtn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
 
         #addBtn:active {
             transform: translateY(0);
         }
 
-        .radio-group {
+        #guestList {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .radio-option input[type="radio"] {
-            cursor: pointer;
-            width: 18px;
-            height: 18px;
-            accent-color: #1e40af;
-        }
-
-        .radio-option label {
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        #guestListContainer {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 10px;
-            margin-top: 15px;
         }
 
         .guest-badge {
             background: white;
-            padding: 12px 14px;
-            border-radius: 8px;
-            border: 2px solid #1e40af;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
             font-size: 14px;
-            font-weight: 500;
             word-break: break-word;
-            box-shadow: 0 2px 6px rgba(30, 64, 175, 0.1);
-            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .guest-count {
-            color: #1e40af;
-            font-weight: 700;
+            color: #667eea;
+            font-weight: 600;
             margin-top: 15px;
-            font-size: 15px;
+            font-size: 14px;
+        }
+
+        .map-container {
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .note {
+            background: #fffbea;
+            border-left: 4px solid #fbbf24;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #92400e;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .message-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .message-author {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 14px;
+        }
+
+        .message-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .message-body {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .message-body a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .message-body a:hover {
+            text-decoration: underline;
         }
 
         .footer {
-            background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
-            padding: 25px 30px;
+            background: #f8f9fa;
+            padding: 20px 30px;
             text-align: center;
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            border-top: 2px solid #1e40af;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #e5e7eb;
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 600px) {
             .header {
-                padding: 35px 20px;
+                padding: 30px 20px;
             }
 
             .header h1 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .content {
                 padding: 25px 20px;
             }
 
-            .lists-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
             .form-group {
                 flex-direction: column;
             }
 
-            #addBtn {
-                width: 100%;
-            }
-
-            .radio-group {
+            #guestList {
                 grid-template-columns: 1fr;
             }
 
-            #guestListContainer {
-                grid-template-columns: 1fr;
-            }
-
-            .section h2 {
-                font-size: 18px;
+            .timeline-item {
+                font-size: 14px;
             }
         }
 
-        .heart {
-            color: #f97316;
-        }
-
-        .emoji {
-            font-size: 18px;
+        .loading {
+            display: inline-block;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Carissima o carissimo 🎉</h1>
-            <p>Se leggi questo messaggio è perché sei una persona a cui voglio bene e quindi mi farebbe super piacere vederti per festeggiare la fine del dottorato e l'inizio di qualcos'altro (non poniamo limiti alla fantasia definendo cosa sia questo qualcos'altro)</p>
+            <h1>🎓 Celebrissima!</h1>
+            <p>Sei una persona a cui voglio bene e quindi mi farebbe super piacere vederti per festeggiare la fine del dottorato e l'inizio di qualcos'altro</p>
         </div>
 
         <div class="content">
-            <!-- Intro -->
+            <!-- Data e Luogo -->
             <div class="section">
-                <p class="section-text">Lunedì <strong>28 settembre</strong> cercherò di portare a casa questo tanto agognato titolo. Il programma della giornata sarà il seguente:</p>
+                <h2>📅 Quando e dove</h2>
+                <p class="section-text"><strong>Lunedì 28 settembre</strong> cercherò di portare a casa questo tanto agognato titolo.</p>
             </div>
 
             <!-- Programma -->
             <div class="section">
-                <h2>📅 Il programma</h2>
-                
+                <h2>🕐 Programma della giornata</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="time"><span class="emoji">🎓</span> Alle 10:30</div>
-                        <div class="description">Presso il dipartimento di biologia ambientale avrete l'occasione unica di capire di cosa mi occupo assistendo alla final dissertationss. A seguire rapido brindisi in città universitaria.</div>
-                        <a href="https://maps.app.goo.gl/BRwn8YB8ruNxmNku9?g_st=ic" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
+                        <div class="time">10:30 — Dipartimento</div>
+                        <div class="description">Presso il dipartimento di biologia ambientale, Sapienza. L'occasione unica di capire di cosa mi occupo assistendo alla final dissertationss. A seguire rapido brindisi in città universitaria.</div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2972.0476531856435!2d12.496814!3d41.900361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61c1e7c0c0c1%3A0x8b8b8b8b8b8b8b8b!2sDipartimento%20di%20Biologia%20Ambientale%20-%20Sapienza!5e0!3m2!1sit!2sit!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time"><span class="emoji">🍺</span> Alle ore 21 (forse)</div>
-                        <div class="description">In luogo da confermare (indicativamente Roma Est) avrete l'occasione, meno unica della prima, di vedermi bere. Contestualmente offrirò da bere perché farlo insieme è meglio che farlo per conto proprio. Insomma è una bella occasione comunque ;)</div>
+                        <div class="time">20:00 (forse) — Cena</div>
+                        <div class="description">In luogo da confermare (indicativamente Roma Est) avrete l'occasione, meno unica della prima, di vedermi bere e mangiare. Contestualmente offro da bere e da mangiare perché farlo insieme è meglio che farlo per conto proprio. Insomma è una bella occasione comunque ;)</div>
                     </div>
                 </div>
+            </div>
 
-                <div class="important-note">
-                    <strong>⚠️ Info importante:</strong> Il luogo per lunedì sera cercherò di dirvelo in privato ma coooomunque sarà aggiornato qua! Quindi se lunedì sera ti svegli e non sai dove andare butta un'occhio qui!!
-                </div>
+            <div class="note">
+                <strong>ℹ️ Info importante:</strong> Il luogo per lunedì sera cercherò di dirvelo in privato ma cooomunque sarà aggiornato qua! Quindi se lunedì sera ti svegli e non sai dove andare butta un'occhio qui!!
             </div>
 
             <!-- Form ospiti -->
             <div class="section">
-                <h2>✨ Fammi sapere se ci sei!</h2>
-                <p class="section-text">Per aiutarmi nel definire e organizzare mi servirebbe in linea di massima sapere se ci sarai! Se si aggiungi gentilmente il tuo nome alla lista qua sotto, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span></p>
+                <h2>✨ Chi viene?</h2>
+                <p class="section-text">Per aiutarmi nel definire e organizzare mi servirebbe in linea di massima sapere se ci sarai.</p>
 
                 <div class="form-section">
                     <h3>Aggiungi il tuo nome</h3>
-                    
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="checkbox" id="orario1" value="brindo_1030" checked>
-                            <label for="orario1">Brindo alle 10:30</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="checkbox" id="orario2" value="bevo_21">
-                            <label for="orario2">Bevo alle 21</label>
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <input 
                             type="text" 
@@ -410,538 +340,67 @@
                         >
                         <button id="addBtn" onclick="addGuest()">Aggiungi</button>
                     </div>
-
-                    <div id="guestListContainer"></div>
+                    <div id="guestList"></div>
                     <div class="guest-count" id="guestCount"></div>
                 </div>
             </div>
 
-            <!-- Liste separate -->
-            <div class="lists-container">
-                <div class="guest-list">
-                    <h3>🥂 Brindo alle 10:30</h3>
-                    <div class="guest-items" id="list1030"></div>
-                </div>
-
-                <div class="guest-list">
-                    <h3>🍺 Bevo alle 21</h3>
-                    <div class="guest-items" id="list21"></div>
-                </div>
+            <div class="note">
+                Se si aggiungono gentilmente il tuo nome alla lista qua sotto, se no ti voglio comunque un mondo di bene ♥
             </div>
 
-            <div class="important-note" style="text-align: center; margin-top: 30px;">
-                Se si aggiungi il tuo nome alla lista, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span>
-            </div>
-        </div>
-
-        <div class="footer">
-        </div>
-    </div>
-
-    <script>
-        // CONFIGURATION - Sostituisci con il tuo script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/d/YOUR_SCRIPT_ID/useFunctionByName?name=addGuest';
-
-        // Carica i dati all'apertura della pagina
-        window.addEventListener('DOMContentLoaded', () => {
-            loadGuests();
-        });
-
-        async function addGuest() {
-            const nameInput = document.getElementById('nameInput');
-            const name = nameInput.value.trim();
-            
-            // Leggi i checkbox selezionati
-            const orari = [];
-            if (document.getElementById('orario1').checked) orari.push('brindo_1030');
-            if (document.getElementById('orario2').checked) orari.push('bevo_21');
-
-            if (!name) {
-                alert('Scrivi il tuo nome!');
-                return;
-            }
-
-            if (orari.length === 0) {
-                alert('Seleziona almeno un orario!');
-                return;
-            }
-
-            const addBtn = document.getElementById('addBtn');
-            addBtn.textContent = '...';
-            addBtn.disabled = true;
-
-            try {
-                for (let orario of orari) {
-                    const response = await fetch(SCRIPT_URL, {
-                        method: 'POST',
-                        body: JSON.stringify({ name: name, orario: orario })
-                    });
-
-                    if (!response.ok) {
-                        alert('Errore nel salvataggio. Riprova.');
-                        throw new Error('Errore salvataggio');
-                    }
-                }
-                
-                nameInput.value = '';
-                loadGuests();
-            } catch (error) {
-                console.error('Errore:', error);
-            } finally {
-                addBtn.textContent = 'Aggiungi';
-                addBtn.disabled = false;
-            }
-        }
-
-        async function loadGuests() {
-            try {
-                const response = await fetch(SCRIPT_URL.replace('addGuest', 'getGuests'));
-                const data = await response.json();
-                
-                if (data.guests1030 && data.guests21) {
-                    const list1030 = document.getElementById('list1030');
-                    const list21 = document.getElementById('list21');
-
-                    list1030.innerHTML = data.guests1030.length > 0 
-                        ? data.guests1030.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
-                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
-
-                    list21.innerHTML = data.guests21.length > 0
-                        ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
-                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
-
-                    const total = data.guests1030.length + data.guests21.length;
-                    document.getElementById('guestCount').textContent = total > 0 
-                        ? `✨ ${total} persone confermano la loro presenza`
-                        : 'Sii il primo a confermare!';
-                }
-            } catch (error) {
-                console.error('Errore nel caricamento ospiti:', error);
-            }
-        }
-
-        function escapeHtml(text) {
-            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.replace(/[&<>"']/g, m => map[m]);
-        }
-    </script>
-</body>
-</html>        }
-
-        .header::before {
-            content: '🎓';
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 40px;
-            opacity: 0.3;
-        }
-
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .header p {
-            font-size: 16px;
-            opacity: 0.95;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            font-size: 20px;
-            color: #1e40af;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .section-text {
-            line-height: 1.8;
-            color: #555;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        .timeline {
-            background: linear-gradient(to right, #eff6ff, #fef3c7);
-            border-left: 4px solid #f97316;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .time {
-            font-weight: 700;
-            color: #f97316;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .description {
-            color: #666;
-            font-size: 15px;
-            margin-top: 8px;
-            line-height: 1.7;
-        }
-
-        .map-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 14px;
-            background: #1e40af;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .map-link:hover {
-            background: #1e3a8a;
-        }
-
-        .important-note {
-            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
-            border-left: 4px solid #f97316;
-            padding: 18px;
-            border-radius: 10px;
-            font-size: 14px;
-            color: #92400e;
-            margin: 25px 0;
-            line-height: 1.7;
-        }
-
-        .lists-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .guest-list {
-            background: #f0f9ff;
-            border: 2px solid #1e40af;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .guest-list h3 {
-            color: #1e40af;
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .guest-items {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .guest-item {
-            background: white;
-            padding: 10px 12px;
-            border-radius: 6px;
-            border-left: 3px solid #1e40af;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .form-section {
-            background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
-            padding: 28px;
-            border-radius: 14px;
-            border: 2px solid #1e40af;
-            margin: 30px 0;
-        }
-
-        .form-section h3 {
-            color: #1e40af;
-            margin-bottom: 18px;
-            font-size: 17px;
-            font-weight: 700;
-        }
-
-        .form-group {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .form-section input {
-            flex: 1;
-            padding: 13px 15px;
-            border: 2px solid #1e40af;
-            border-radius: 8px;
-            font-size: 15px;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-
-        .form-section input:focus {
-            outline: none;
-            border-color: #f97316;
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
-        }
-
-        #addBtn {
-            padding: 13px 28px;
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 15px;
-            transition: all 0.3s;
-        }
-
-        #addBtn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
-        }
-
-        #addBtn:active {
-            transform: translateY(0);
-        }
-
-        .radio-group {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .radio-option input[type="radio"] {
-            cursor: pointer;
-            width: 18px;
-            height: 18px;
-            accent-color: #1e40af;
-        }
-
-        .radio-option label {
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        #guestListContainer {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .guest-badge {
-            background: white;
-            padding: 12px 14px;
-            border-radius: 8px;
-            border: 2px solid #1e40af;
-            font-size: 14px;
-            font-weight: 500;
-            word-break: break-word;
-            box-shadow: 0 2px 6px rgba(30, 64, 175, 0.1);
-            text-align: center;
-        }
-
-        .guest-count {
-            color: #1e40af;
-            font-weight: 700;
-            margin-top: 15px;
-            font-size: 15px;
-        }
-
-        .footer {
-            background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
-            padding: 25px 30px;
-            text-align: center;
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            border-top: 2px solid #1e40af;
-        }
-
-        @media (max-width: 650px) {
-            .header {
-                padding: 35px 20px;
-            }
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .content {
-                padding: 25px 20px;
-            }
-
-            .lists-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .form-group {
-                flex-direction: column;
-            }
-
-            #addBtn {
-                width: 100%;
-            }
-
-            .radio-group {
-                grid-template-columns: 1fr;
-            }
-
-            #guestListContainer {
-                grid-template-columns: 1fr;
-            }
-
-            .section h2 {
-                font-size: 18px;
-            }
-        }
-
-        .heart {
-            color: #f97316;
-        }
-
-        .emoji {
-            font-size: 18px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Carissima o carissimo 🎉</h1>
-            <p>Se leggi questo messaggio è perché sei una persona a cui voglio bene e quindi mi farebbe super piacere vederti per festeggiare la fine del dottorato e l'inizio di qualcos'altro (non poniamo limiti alla fantasia definendo cosa sia questo qualcos'altro)</p>
-        </div>
-
-        <div class="content">
-            <!-- Intro -->
+            <!-- Bacheca messaggi -->
             <div class="section">
-                <p class="section-text">Lunedì <strong>28 settembre</strong> cercherò di portare a casa questo tanto agognato titolo. Il programma della giornata sarà il seguente:</p>
-            </div>
-
-            <!-- Programma -->
-            <div class="section">
-                <h2>📅 Il programma</h2>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="time"><span class="emoji">🎓</span> Alle 10:30</div>
-                        <div class="description">Presso il dipartimento di biologia ambientale avrete l'occasione unica di capire di cosa mi occupo assistendo alla final dissertationss. A seguire rapido brindisi in città universitaria.</div>
-                        <a href="https://maps.app.goo.gl/BRwn8YB8ruNxmNku9?g_st=ic" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time"><span class="emoji">🍺</span> Alle ore 21 (forse)</div>
-                        <div class="description">In luogo da confermare (indicativamente Roma Est) avrete l'occasione, meno unica della prima, di vedermi bere. Contestualmente offrirò da bere perché farlo insieme è meglio che farlo per conto proprio. Insomma è una bella occasione comunque ;)</div>
-                    </div>
-                </div>
-
-                <div class="important-note">
-                    <strong>⚠️ Info importante:</strong> Il luogo per lunedì sera cercherò di dirvelo in privato ma coooomunque sarà aggiornato qua! Quindi se lunedì sera ti svegli e non sai dove andare butta un'occhio qui!!
-                </div>
-            </div>
-
-            <!-- Form ospiti -->
-            <div class="section">
-                <h2>✨ Vieni anche tu?</h2>
-                <p class="section-text">Per aiutarmi nel definire e organizzare mi servirebbe in linea di massima sapere se ci sarai! Se si aggiungi gentilmente il tuo nome alla lista qua sotto, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span></p>
+                <h2>💬 Bacheca della community</h2>
+                <p class="section-text">Organizza il regalo, crea gruppi, condividi link e coordinate qui.</p>
 
                 <div class="form-section">
-                    <h3>Aggiungi il tuo nome</h3>
-                    
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="orario1" name="orario" value="brindo_1030" checked>
-                            <label for="orario1">Brindo alle 10:30</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="orario2" name="orario" value="bevo_21">
-                            <label for="orario2">Bevo alle 21</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
+                    <h3>Lascia un messaggio</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
                         <input 
                             type="text" 
-                            id="nameInput" 
-                            placeholder="Scrivi il tuo nome..."
-                            onkeypress="if(event.key==='Enter') addGuest()"
+                            id="msgName" 
+                            placeholder="Il tuo nome..."
+                            style="padding: 12px 14px; border: 2px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit;"
                         >
-                        <button id="addBtn" onclick="addGuest()">Aggiungi</button>
+                        <textarea 
+                            id="msgText" 
+                            placeholder="Es: Io organizzo un gruppo WhatsApp per il regalo... https://chat.whatsapp.com/..."
+                            style="padding: 12px 14px; border: 2px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; min-height: 80px; resize: vertical;"
+                        ></textarea>
+                        <button id="msgBtn" onclick="postMessage()" style="padding: 12px 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s;">
+                            Pubblica
+                        </button>
                     </div>
 
-                    <div id="guestListContainer"></div>
-                    <div class="guest-count" id="guestCount"></div>
+                    <div style="border-top: 2px solid #e0e7ff; padding-top: 20px;">
+                        <h3 style="color: #667eea; margin-bottom: 15px; font-size: 16px; font-weight: 600;">Messaggi recenti</h3>
+                        <div id="messagesList" style="display: flex; flex-direction: column; gap: 12px;"></div>
+                        <div id="noMessages" style="color: #999; font-size: 14px; text-align: center; padding: 20px;">Ancora nessun messaggio. Sii il primo!</div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Liste separate -->
-            <div class="lists-container">
-                <div class="guest-list">
-                    <h3>🥂 Brindo alle 10:30</h3>
-                    <div class="guest-items" id="list1030"></div>
-                </div>
-
-                <div class="guest-list">
-                    <h3>🍺 Bevo alle 21</h3>
-                    <div class="guest-items" id="list21"></div>
-                </div>
-            </div>
-
-            <div class="important-note" style="text-align: center; margin-top: 30px;">
-                Se si aggiungi il tuo nome alla lista, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span>
             </div>
         </div>
 
         <div class="footer">
+            <p>Fatto con ♥ per la celebrazione del dottorato</p>
         </div>
     </div>
 
     <script>
-        // CONFIGURATION - Sostituisci con il tuo script URL
+        // Sostituisci con l'URL del tuo Google Apps Script deployment
         const SCRIPT_URL = 'https://script.google.com/macros/d/YOUR_SCRIPT_ID/useFunctionByName?name=addGuest';
 
-        // Carica i dati all'apertura della pagina
+        // Carica all'apertura della pagina
         window.addEventListener('DOMContentLoaded', () => {
             loadGuests();
+            loadMessages();
+            // Ricarica messaggi ogni 5 secondi
+            setInterval(loadMessages, 5000);
         });
 
         async function addGuest() {
             const nameInput = document.getElementById('nameInput');
-            const orario = document.querySelector('input[name="orario"]:checked').value;
             const name = nameInput.value.trim();
 
             if (!name) {
@@ -956,7 +415,7 @@
             try {
                 const response = await fetch(SCRIPT_URL, {
                     method: 'POST',
-                    body: JSON.stringify({ name: name, orario: orario })
+                    body: JSON.stringify({ name: name })
                 });
 
                 if (response.ok) {
@@ -976,34 +435,121 @@
 
         async function loadGuests() {
             try {
-                const response = await fetch(SCRIPT_URL.replace('addGuest', 'getGuests'));
+                const response = await fetch(SCRIPT_URL.replace('useFunctionByName?name=addGuest', 'useFunctionByName?name=getGuests'));
                 const data = await response.json();
                 
-                if (data.guests1030 && data.guests21) {
-                    const list1030 = document.getElementById('list1030');
-                    const list21 = document.getElementById('list21');
+                const guestList = document.getElementById('guestList');
+                const guestCount = document.getElementById('guestCount');
 
-                    list1030.innerHTML = data.guests1030.length > 0 
-                        ? data.guests1030.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
-                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
-
-                    list21.innerHTML = data.guests21.length > 0
-                        ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
-                        : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
-
-                    const total = data.guests1030.length + data.guests21.length;
-                    document.getElementById('guestCount').textContent = total > 0 
-                        ? `✨ ${total} persone confermano la loro presenza`
-                        : 'Sii il primo a confermare!';
+                if (data.guests && data.guests.length > 0) {
+                    guestList.innerHTML = data.guests
+                        .map(name => `<div class="guest-badge">${name}</div>`)
+                        .join('');
+                    guestCount.textContent = `${data.guests.length} persone confermano la loro presenza`;
+                } else {
+                    guestList.innerHTML = '';
+                    guestCount.textContent = 'Sii il primo a confermare!';
                 }
             } catch (error) {
-                console.error('Errore nel caricamento ospiti:', error);
+                console.error('Errore nel caricamento:', error);
+            }
+        }
+
+        async function postMessage() {
+            const msgName = document.getElementById('msgName').value.trim();
+            const msgText = document.getElementById('msgText').value.trim();
+
+            if (!msgName || !msgText) {
+                alert('Scrivi nome e messaggio!');
+                return;
+            }
+
+            const msgBtn = document.getElementById('msgBtn');
+            msgBtn.textContent = '...';
+            msgBtn.disabled = true;
+
+            try {
+                const response = await fetch(SCRIPT_URL.replace('addGuest', 'postMessage'), {
+                    method: 'POST',
+                    body: JSON.stringify({ 
+                        name: msgName, 
+                        text: msgText
+                    })
+                });
+
+                if (response.ok) {
+                    document.getElementById('msgName').value = '';
+                    document.getElementById('msgText').value = '';
+                    loadMessages();
+                } else {
+                    alert('Errore nel salvataggio. Riprova.');
+                }
+            } catch (error) {
+                console.error('Errore:', error);
+                alert('Errore di connessione. Riprova.');
+            } finally {
+                msgBtn.textContent = 'Pubblica';
+                msgBtn.disabled = false;
+            }
+        }
+
+        async function loadMessages() {
+            try {
+                const response = await fetch(SCRIPT_URL.replace('addGuest', 'getMessages'));
+                const data = await response.json();
+                
+                const messagesList = document.getElementById('messagesList');
+                const noMessages = document.getElementById('noMessages');
+
+                if (data.messages && data.messages.length > 0) {
+                    noMessages.style.display = 'none';
+                    messagesList.innerHTML = data.messages
+                        .map(msg => `
+                            <div class="message-card">
+                                <div class="message-header">
+                                    <span class="message-author">${escapeHtml(msg.name)}</span>
+                                    <span class="message-time">${formatTime(msg.timestamp)}</span>
+                                </div>
+                                <div class="message-body">${linkify(escapeHtml(msg.text))}</div>
+                            </div>
+                        `)
+                        .join('');
+                } else {
+                    messagesList.innerHTML = '';
+                    noMessages.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Errore nel caricamento messaggi:', error);
             }
         }
 
         function escapeHtml(text) {
-            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
             return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function linkify(text) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+        }
+
+        function formatTime(timestamp) {
+            if (!timestamp) return '';
+            const date = new Date(timestamp);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000);
+
+            if (diff < 60) return 'ora';
+            if (diff < 3600) return Math.floor(diff / 60) + 'm fa';
+            if (diff < 86400) return Math.floor(diff / 3600) + 'h fa';
+            
+            return date.toLocaleDateString('it-IT');
         }
     </script>
 </body>
