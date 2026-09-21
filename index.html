@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>28 Settembre • Dottore di sto pane</title>
+    <title>28 Settembre • Celebrissima</title>
     <style>
         * {
             margin: 0;
@@ -414,7 +414,7 @@
                 </div>
 
                 <div class="important-note" style="text-align: center; margin-top: 20px;">
-                    Siccome per il mio compleanno ho fatto dei casini rendendo sostanzialmente impossibile la vita a Monica 😇, a sto giro mi è stato chiesto di facilitare il tutto. Quindi se vuoi partecipare a un gruppo al quale io non posso accedere e nel quale non ho idea di cosa possa succedere <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">qua c'è il link</a> 🥷🏾😶‍🌫️
+                    Siccome per il mio compleanno ho fatto dei casini rendendo sostanzialmente impossibile la vita a Monica 😇, a sto giro mi è stato chiesto di facilitare il tutto. Quindi se vuoi partecipare a un gruppo al quale io non posso accedere e nel quale non ho idea di cosa possa succedere <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">qua c'è il link</a> 👀🥷🏾😶‍🌫️
                 </div>
             </div>
 
@@ -423,11 +423,13 @@
                 <div class="guest-list">
                     <h3>🥂 Brindo alle 10:30</h3>
                     <div class="guest-items" id="list1030"></div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #9333ea; font-weight: 600;">Tot: <span id="count1030">0</span></div>
                 </div>
 
                 <div class="guest-list">
                     <h3>🍺 Bevo alle 21</h3>
                     <div class="guest-items" id="list21"></div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #9333ea; font-weight: 600;">Tot: <span id="count21">0</span></div>
                 </div>
             </div>
     </div>
@@ -505,9 +507,10 @@
                         : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
 
                     const total = data.guests1030.length + data.guests21.length;
-                    document.getElementById('guestCount').textContent = total > 0 
-                        ? `✨ ${total} persone confermano la loro presenza`
-                        : 'Sii il primo a confermare!';
+                    
+                    // Aggiorna contatori
+                    document.getElementById('count1030').textContent = data.guests1030.length;
+                    document.getElementById('count21').textContent = data.guests21.length;
                 }
             } catch (error) {
                 console.error('Errore nel caricamento ospiti:', error);
