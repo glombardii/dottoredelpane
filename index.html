@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>28 Settembre • Celebrissima</title>
+    <title>28 Settembre • Dottore di sto pane</title>
     <style>
         * {
             margin: 0;
@@ -81,6 +81,45 @@
             margin-bottom: 15px;
         }
 
+        .venue-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #d946ef 100%);
+            color: white;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(217, 70, 239, 0.25);
+        }
+
+        .venue-box .venue-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.85;
+            font-weight: 600;
+        }
+
+        .venue-box .venue-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 8px 0 4px;
+        }
+
+        .venue-box .venue-time {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .venue-box .map-link {
+            background: white;
+            color: #c026d3;
+            margin-top: 14px;
+        }
+
+        .venue-box .map-link:hover {
+            background: #f3e8ff;
+        }
+
         .timeline {
             background: linear-gradient(to right, #eff6ff, #fef3c7);
             border-left: 4px solid #f97316;
@@ -139,36 +178,6 @@
             color: #6b21a8;
             margin: 25px 0;
             line-height: 1.7;
-        }
-
-        .confirmed-alert {
-            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
-            border-left: 6px solid #f97316;
-            padding: 22px;
-            border-radius: 10px;
-            font-size: 15px;
-            color: #92400e;
-            margin: 25px 0;
-            line-height: 1.8;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
-        }
-
-        .confirmed-alert strong {
-            font-size: 17px;
-            color: #ea580c;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .confirmed-alert a {
-            color: #ea580c;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px solid #ea580c;
-        }
-
-        .confirmed-alert a:hover {
-            color: #c2410c;
         }
 
         .lists-container {
@@ -342,6 +351,10 @@
                 padding: 25px 20px;
             }
 
+            .venue-box .venue-name {
+                font-size: 21px;
+            }
+
             .lists-container {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -385,6 +398,14 @@
         </div>
 
         <div class="content">
+            <!-- Luogo confermato per la sera -->
+            <div class="venue-box">
+                <div class="venue-label">✅ Luogo confermato per la sera</div>
+                <div class="venue-name">🍻 Zazie nel Metrò</div>
+                <div class="venue-time">Lunedì 28 settembre, ore 21</div>
+                <a href="https://maps.app.goo.gl/Ty43qeqr8BgbVeBR8" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
+            </div>
+
             <!-- Intro -->
             <div class="section">
                 <p class="section-text">Lunedì <strong>28 settembre</strong> cercherò di portare a casa questo tanto agognato titolo. Il programma della giornata sarà il seguente:</p>
@@ -393,13 +414,6 @@
             <!-- Programma -->
             <div class="section">
                 <h2>📅 Il programma</h2>
-
-                <div class="confirmed-alert">
-                    <strong>🎉 APERITIVO/CENA CONFERMATO!</strong>
-                    <div>📍 Ritrovo: <a href="https://maps.app.goo.gl/h5rnZCVtV8juFWLJ8" target="_blank">Zazie nel metrò</a></div>
-                    <div>🕘 Ore 21:00</div>
-                    <div> 🍻🍾🫕 Ci sarà da mangiare e bere!</div>
-                </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -410,13 +424,9 @@
 
                     <div class="timeline-item">
                         <div class="time"><span class="emoji">🍺</span> Alle ore 21</div>
-                        <div class="description">Presso <strong>Zazie nel metrò</strong> avrete l'occasione, meno unica della pirma, di vedermi bere. Contestualmente offrirò da bere perché farlo insieme è meglio che farlo per conto proprio. Ci sarà da mangiare e bere, insomma è una bella occasione! 🍻🍾🫕 </div>
-                        <a href="https://maps.app.goo.gl/h5rnZCVtV8juFWLJ8" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
+                        <div class="description">Ci vediamo da <strong>Zazie nel Metrò</strong>! Avrete l'occasione, meno unica della prima, di vedermi bere. Ci sarà da mangiare e da bere, perché farlo insieme è meglio che farlo per conto proprio. Insomma è una bella occasione comunque ;)</div>
+                        <a href="https://maps.app.goo.gl/Ty43qeqr8BgbVeBR8" target="_blank" class="map-link">📍 Visualizza sulla mappa</a>
                     </div>
-                </div>
-
-                <div class="important-note">
-                    <strong>⚠️ Info importante:</strong> Il luogo per lunedì sera cercherò di dirvelo in privato ma coooomunque sarà aggiornato qua! Quindi se lunedì sera ti svegli e non sai dove andare butta un'occhio qui!!
                 </div>
             </div>
 
@@ -449,7 +459,10 @@
                     </div>
 
                     <div id="guestListContainer"></div>
-                    <div class="guest-count" id="guestCount"></div>
+                </div>
+
+                <div class="important-note" style="text-align: center; margin-top: 20px;">
+                    Siccome per il mio compleanno ho fatto dei casini rendendo sostanzialmente impossibile la vita a Monica 😇, a sto giro mi è stato chiesto di facilitare il tutto. Quindi se vuoi partecipare a un gruppo al quale io non posso accedere e nel quale non ho idea di cosa possa succedere <a href="https://chat.whatsapp.com/KgZmCG2017B1rmbXn3wZKD?mode=gi_t" target="_blank" style="color: #d946ef; font-weight: 600; text-decoration: none;">qua c'è il link</a> 👀🥷🏾😶‍🌫️
                 </div>
             </div>
 
@@ -458,22 +471,21 @@
                 <div class="guest-list">
                     <h3>🥂 Brindo alle 10:30</h3>
                     <div class="guest-items" id="list1030"></div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #9333ea; font-weight: 600;">Tot: <span id="count1030">0</span></div>
                 </div>
 
                 <div class="guest-list">
                     <h3>🍺 Bevo alle 21</h3>
                     <div class="guest-items" id="list21"></div>
+                    <div style="margin-top: 12px; font-size: 13px; color: #9333ea; font-weight: 600;">Tot: <span id="count21">0</span></div>
                 </div>
             </div>
-
-            <div class="important-note" style="text-align: center; margin-top: 30px;">
-                Se si aggiungi il tuo nome alla lista, se no ti voglio comunque un mondo di bene <span class="heart">♥️</span>
-            </div>
+        </div>
     </div>
 
     <script>
         // CONFIGURATION - Sostituisci con il tuo script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxSJclNM9VPgRECghsOVlBmWLq1uDrDRdsK_8XWHM7GTBbyJhaSkUjNko1rDwCknv2FjQ/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxtr09t0TmcGvJ3fLfxKp8_zKQH77Uz7vBzrMo-6RQVXOXkPPWb-0BHCkeoOSVeMv8npA/exec';
 
         // Carica i dati all'apertura della pagina
         window.addEventListener('DOMContentLoaded', () => {
@@ -536,17 +548,16 @@
                     const list21 = document.getElementById('list21');
 
                     list1030.innerHTML = data.guests1030.length > 0
-                        ? data.guests1030.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
+                        ? data.guests1030.map(name => `<div class="guest-item">✓ ${escapeHtml(String(name))}</div>`).join('')
                         : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
 
                     list21.innerHTML = data.guests21.length > 0
-                        ? data.guests21.map(name => `<div class="guest-item">✓ ${name}</div>`).join('')
+                        ? data.guests21.map(name => `<div class="guest-item">✓ ${escapeHtml(String(name))}</div>`).join('')
                         : '<div class="guest-item" style="border-left-color: #ccc; color: #999;">Ancora nessuno...</div>';
 
-                    const total = data.guests1030.length + data.guests21.length;
-                    document.getElementById('guestCount').textContent = total > 0
-                        ? `✨ ${total} persone confermano la loro presenza`
-                        : 'Sii il primo a confermare!';
+                    // Aggiorna contatori
+                    document.getElementById('count1030').textContent = data.guests1030.length;
+                    document.getElementById('count21').textContent = data.guests21.length;
                 }
             } catch (error) {
                 console.error('Errore nel caricamento ospiti:', error);
